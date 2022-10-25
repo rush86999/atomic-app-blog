@@ -1,19 +1,18 @@
 // @ts-check
-/* eslint-disable @typescript-eslint/no-var-requires */
 
 const defaultTheme = require('tailwindcss/defaultTheme')
 const colors = require('tailwindcss/colors')
 
-/** @type {import("tailwindcss/tailwind-config").TailwindConfig } */
+// ../node_modules/pliny/dist/**/*.mjs is needed for monorepo setup
+/** @type {import("tailwindcss/types").Config } */
 module.exports = {
-  experimental: {
-    optimizeUniversalDefaults: true,
-  },
   content: [
-    './pages/**/*.tsx',
-    './components/**/*.tsx',
-    './layouts/**/*.tsx',
-    './lib/**/*.ts',
+    '../node_modules/pliny/**/*.{js,ts,tsx}',
+    './node_modules/pliny/**/*.{js,ts,tsx}',
+    './pages/**/*.{js,ts,tsx}',
+    './components/**/*.{js,ts,tsx}',
+    './layouts/**/*.{js,ts,tsx}',
+    './lib/**/*.{js,ts,tsx}',
     './data/**/*.mdx',
   ],
   darkMode: 'class',
